@@ -1,10 +1,10 @@
 #Geoff Downes 11 March 2026
 #Forest Quality Pty. Ltd. 
-webr::unmount("/usr/lib/R/library/shinyMobile")
-webr::install(
-  "shinyMobile",
-  repos = c("https://rinterface.github.io/rinterface-wasm-cran/")
-)
+#webr::unmount("/usr/lib/R/library/shinyMobile")
+#webr::install(
+#  "shinyMobile",
+#  repos = c("https://rinterface.github.io/rinterface-wasm-cran/")
+#)
 
 
 library(shiny)
@@ -46,12 +46,12 @@ shinyApp(
           id = "mypanel1",
           side = "left",
           effect = "push",
-          title = "Left panel",
+          title = "Process controls",
           f7Block("A panel with push effect"),
           f7PanelMenu(
             id = "menu",
             f7PanelItem(
-              tabName = "Tab1",
+              tabName = "Summary Table",
               title = "Tab 1",
               icon = f7Icon("folder"),
               active = TRUE
@@ -72,14 +72,14 @@ shinyApp(
           id = "mypanel2",
           side = "right",
           effect = "floating",
-          title = "Right panel",
+          title = "Resi Plot panel",
           f7Block(
-            "A panel with cover effect"
+            "Selected Resi trace"
           )
         )
       ),
       navbar = f7Navbar(
-        title = "shinyMobile Sandbox",
+        title = "ResiMobile Summary table",
         hairline = TRUE,
         leftPanel = TRUE,
         rightPanel = TRUE
