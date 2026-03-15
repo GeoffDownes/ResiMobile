@@ -63,7 +63,7 @@ shinyApp(
                 )
             ),
             
-            navbar = f7Navbar(title = "ResiMobile", hairline = TRUE, leftPanel = TRUE, rightPanel = FALSE, shadow = TRUE),
+            navbar = f7Navbar(title = "ResiMobile", hairline = TRUE, leftPanel = TRUE, rightPanel = FALSE),
             
             f7Tabs(
                 id = "tabs",
@@ -280,9 +280,8 @@ shinyApp(
                          confirmButtonText = "Acknowledge and proceed",
                          confirmButtonCol = "orange")
           }
-          
-          rm(resTraces,ringData,traceData,sData,feedTraces,
-             inFile,regVar,rPos,callerID,delTrace,fName,i,n,)
+#browser()
+          #rm(resTraces,ringData,traceData,sData,feedTraces,inFile,regVar,rPos,callerID,fName,i,n,drillOffset)
 
       })
       
@@ -291,9 +290,9 @@ shinyApp(
           if (is.null(values$df$FileName) == T) return()
           #req(input$dataCol)
           df <- (values$df)
-          browser()
+#browser()
           #result <- df[,c("FileName", "TreeID", "DOB", "DUB", "CoreDensity", input$dataCol), drop=FALSE] |> as.data.frame()
-          df[,c(1,2,3,4,6,9,10,11,13:15)]
+          df[,c(1,2,9,10,11,13:15,3,4,6)]
       }, ,server = FALSE
       ,selection = 'single'
       ,rownames=TRUE
